@@ -18,21 +18,54 @@ async function fetchPrices() {
 
     console.log(data);
 
+    const header = document.createElement("div");
+    header.id="header";
+    header.innerHTML = `
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h3>Coin</h3>
+                </div>
+                <div class="col">
+                    <h2></h2>
+                </div>
+                <div class="col">
+                    <h3>Current Price</h3>
+                </div>
+                <div class="col">
+                    <h3>24 hour change</h3>
+                </div>
+            </div>
+        </div>
+        <br>
+    `;
+    document.body.appendChild(header);
+
     if(btc.checked){
         const btcdata = document.createElement("div");
-        btcdata.id = "btcdata";
+        btcdata.id="btcdata"
     
         btcdata.innerHTML = `
-            <div class="btcdata-header">
-                <img src="${data[0].image.small}">
-                <h2>Bitcoin</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="${data[0].image.small}">
+                    </div>
+                    <div class="col">
+                        <h5>Bitcoin</h5>
+                    </div>
+                    <div class="col">
+                        <p>${data[0].market_data.current_price.usd}</p>
+                    </div>
+                    <div class="col">
+                        <p>${data[0].market_data.price_change_percentage_24h}%</p>
+                    </div>
+                </div>
             </div>
-            <div class="btcdata-body">
-                <p>Current Price: ${data[0].market_data.current_price.usd}</p>
-                <p>24 hour change: ${data[0].market_data.price_change_percentage_24h}%</p>
-            </div>
+            <br>
         `;
         document.body.appendChild(btcdata);
+       
     }
 
     if(eth.checked) {
@@ -40,15 +73,24 @@ async function fetchPrices() {
         ethdata.id = "ethdata";
     
         ethdata.innerHTML = `
-            <div class="ethdata-header">
-                <img src="${data[1].image.small}">
-                <h2>Ethereum</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="${data[1].image.small}">
+                    </div>
+                    <div class="col">
+                        <h2>Ethereum</h2>
+                    </div>
+                    <div class="col">
+                        <p>${data[1].market_data.current_price.usd}</p>
+                    </div>
+                    <div class="col">
+                        <p>${data[1].market_data.price_change_percentage_24h}%</p>
+                    </div>
+                </div>
             </div>
-            <div class="ethdata-body">
-                <p>Current Price: ${data[1].market_data.current_price.usd}</p>
-                <p>24 hour change: ${data[1].market_data.price_change_percentage_24h}%</p>
-            </div>
-            `;
+            <br>
+        `;
         document.body.appendChild(ethdata);
     }
 
@@ -57,15 +99,24 @@ async function fetchPrices() {
         bnbdata.id = "bnbdata";
     
         bnbdata.innerHTML = `
-            <div class="bnbdata-header">
-                <img src="${data[2].image.small}">
-                <h2>Binance Coin</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <img src="${data[2].image.small}">
+                    </div>
+                    <div class="col">
+                        <h2>Binance Coin</h2>
+                    </div>
+                    <div class="col">
+                        <p>${data[2].market_data.current_price.usd}</p>
+                    </div>
+                    <div class="col">
+                        <p>${data[2].market_data.price_change_percentage_24h}%</p>
+                    </div>
+                </div>
             </div>
-            <div class="bnbdata-body">
-                <p>Current Price: ${data[2].market_data.current_price.usd}</p>
-                <p>24 hour change: ${data[2].market_data.price_change_percentage_24h}%</p>
-            </div>
-            `;
+            <br>
+        `;
         document.body.appendChild(bnbdata);
     }
 
@@ -74,14 +125,23 @@ async function fetchPrices() {
             xrpdata.id = "xrpdata";
         
             xrpdata.innerHTML = `
-                <div class="xrpdata-header">
-                    <img src="${data[3].image.small}">
-                    <h2>Ripple</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="${data[3].image.small}">
+                        </div>
+                        <div class="col">
+                            <h2>Ripple</h2>
+                        </div>
+                        <div class="col">
+                            <p>${data[3].market_data.current_price.usd}</p>
+                        </div>
+                        <div class="col">
+                            <p>${data[3].market_data.price_change_percentage_24h}%</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="xrpdata-body">
-                    <p>Current Price: ${data[3].market_data.current_price.usd}</p>
-                    <p>24 hour change: ${data[3].market_data.price_change_percentage_24h}%</p>
-                </div>
+                <br>
             `;
             document.body.appendChild(xrpdata);
     }
@@ -91,14 +151,23 @@ async function fetchPrices() {
             dogedata.id = "dogedata";
         
             dogedata.innerHTML = `
-                <div class="dogedata-header">
-                    <img src="${data[4].image.small}">
-                    <h2>Dogecoin</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="${data[6].image.small}">
+                        </div>
+                        <div class="col">
+                            <h2>Dogecoin</h2>
+                        </div>
+                        <div class="col">
+                            <p>${data[6].market_data.current_price.usd}</p>
+                        </div>
+                        <div class="col">
+                            <p>${data[6].market_data.price_change_percentage_24h}%</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="dogedata-body">
-                    <p>Current Price: ${data[4].market_data.current_price.usd}</p>
-                    <p>24 hour change: ${data[4].market_data.price_change_percentage_24h}%</p>
-                </div>
+                <br>
             `;
             document.body.appendChild(dogedata);
     }
@@ -108,14 +177,23 @@ async function fetchPrices() {
             linkdata.id = "linkdata";
         
             linkdata.innerHTML = `
-                <div class="linkdata-header">
-                    <img src="${data[12].image.small}">
-                    <h2>Chainlink</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <img src="${data[11].image.small}">
+                        </div>
+                        <div class="col">
+                            <h2>Chainlink</h2>
+                        </div>
+                        <div class="col">
+                            <p>${data[11].market_data.current_price.usd}</p>
+                        </div>
+                        <div class="col">
+                            <p>${data[11].market_data.price_change_percentage_24h}%</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="linkdata-body">
-                    <p>Current Price: ${data[12].market_data.current_price.usd}</p>
-                    <p>24 hour change: ${data[12].market_data.price_change_percentage_24h}%</p>
-                </div>
+                <br>
             `;
             document.body.appendChild(linkdata);
     }
