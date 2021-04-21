@@ -52,7 +52,7 @@ async function fetchPrices() {
                         <img src="${data[0].image.small}">
                     </div>
                     <div class="col">
-                        <h5>Bitcoin</h5>
+                        <h2>Bitcoin</h2>
                     </div>
                     <div class="col">
                         <p>${data[0].market_data.current_price.usd}</p>
